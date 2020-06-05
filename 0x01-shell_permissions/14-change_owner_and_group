@@ -1,2 +1,2 @@
 #!/bin/bash
-chown chgrp betty holberton hello
+chown betty.holberton hello
