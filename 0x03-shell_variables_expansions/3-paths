@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $PATH | tr "/:" "\n\n" | grep -v '^$' | uniq -u | wc -l
