@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# 3 - Prints 10 times Holberton School
+i=0
+until [ $i -gt 10 ]
+do
+    echo "Holberton School"
+    i=$(( i + 1 ))
+done
