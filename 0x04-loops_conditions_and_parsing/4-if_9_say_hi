@@ -6,7 +6,8 @@ do
     if [ $i == 9 ]
     then
         echo "Hi"
+    else
+        echo "Holberton School"
     fi
-    echo "Holberton School"
     i=$(( i + 1 ))
 done
