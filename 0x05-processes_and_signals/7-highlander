@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # inifite loop with signal trap
 
-trap "echo 'I am invincible!!!'" SIGTERM
+trap "echo 'I am invincible!!!';" SIGTERM
 while true
 do
     echo "To infinity and beyond"
