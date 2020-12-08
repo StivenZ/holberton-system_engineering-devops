@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # creates a private-public key pair with password.
 ssh-keygen -b 4096
+~/.ssh/holberton
+betty
 betty
