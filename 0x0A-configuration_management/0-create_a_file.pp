@@ -1,5 +1,5 @@
 # Create a file
-node default {
+file { 'holberton'
     ensure => present,
     path => '/tmp/holberton',
     mode => '0744',
