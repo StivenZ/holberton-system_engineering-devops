@@ -1,4 +1,4 @@
 # Kill a process
-service { 'killmenow':
-    ensure => 'stopped'
+exec { 'pkill':
+    command => 'pkill -f killmenow'
 }
