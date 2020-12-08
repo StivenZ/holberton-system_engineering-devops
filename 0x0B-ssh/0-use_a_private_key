@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Enters a remote server via private-public key pair ssh.
+ssh -i ~/.ssh/holberton  ubuntu@35.196.170.153
