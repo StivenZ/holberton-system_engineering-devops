@@ -1,7 +1,7 @@
 # Create a file
-node default{
+node default {
+    ensure => present,
     path => '/tmp/holberton',
-    ensure => 'present',
     mode => '0744',
     owner => 'www-data',
     group => 'www-data',
