@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Install nginx in web server
+apt-get -y update
+apt-get -y install nginx
+echo "Hello Holberton" > /var/www/html/index.nginx-debian.html
