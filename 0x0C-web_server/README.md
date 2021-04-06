@@ -1,1 +1,1 @@
-Basic usage and management of a web server.
+Setting up server for Holberton
