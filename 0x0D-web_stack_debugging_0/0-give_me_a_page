@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Debug a server starting apache web server
+apt-get update
+apt-get install apache2
+service apache2 start
