@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Configures a Not found page
-touch /www/html/my_404
-echo "Ceci n'est pas une page" > /www/html/my_404
-STR="\\\terror_page 404 /my_404.html; {\n\t\tlocation = /my_404.html {\n\t\troot ~/www/html;\n"
+touch /var/www/html/my_404
+echo "Ceci n'est pas une page" > /var/www/html/my_404
+STR="\\\terror_page 404 /my_404.html;\n\t\tlocation = /my_404.html {\n\t\t\troot /var/www/html;\n\t\t}"
 sed -i "0,/location/ {
     /location/i ${STR}
     }" /etc/nginx/sites-enabled/default
