@@ -3,5 +3,5 @@
 STR="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=O6_P_ZWwJ3Q permanent;\n"
 sed -i "0,/location/ {
     /location/i ${STR}
-    }" /etc/nginx/sites-enabled/default
+    }" /etc/nginx/sites-available/default
 nginx -s reload
