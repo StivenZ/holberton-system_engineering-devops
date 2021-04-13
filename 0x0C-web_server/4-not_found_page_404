@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Configures a Not found page
+STR="\\\terror_page 404 {\n\t\treturn 404 Ceci n'est pas une page;\n"
+sed -i "0,/location/ {
+    /location/i ${STR}
+    }" default
