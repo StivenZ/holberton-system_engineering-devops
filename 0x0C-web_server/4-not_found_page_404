@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 # Configures a Not found page
-touch /var/www/html/my_404
-echo "Ceci n'est pas une page" > /var/www/html/my_404
-STR="\\\terror_page 404 /my_404.html;\n\t\tlocation = /my_404.html {\n\t\t\troot /var/www/html;\n\t\t}"
+apt-get -y update
+apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo service nginx start
+STR="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=O6_P_ZWwJ3Q permanent;\n"
 sed -i "0,/location/ {
     /location/i ${STR}
     }" /etc/nginx/sites-enabled/default
-nginx -s reload
+touch /var/www/html/my_404
+echo "Ceci n'est pas une page" > /var/www/html/my_404
+STR="\\\terror_page 404 /my_404.html;\n\tlocation = /my_404.html {\n\t\troot /var/www/html;\n\t\t}"
+sed -i "0,/location/ {
+    /location/i ${STR}
+    }" /etc/nginx/sites-enabled/default
+service nginx restart

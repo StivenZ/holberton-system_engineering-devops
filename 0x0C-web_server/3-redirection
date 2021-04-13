@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 # Installing Nginx in server
+apt-get -y update
+apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo service nginx start
 STR="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=O6_P_ZWwJ3Q permanent;\n"
 sed -i "0,/location/ {
     /location/i ${STR}
-    }" /etc/nginx/sites-available/default
-nginx -s reload
+    }" /etc/nginx/sites-enabled/default
+service nginx restart
