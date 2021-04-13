@@ -8,10 +8,10 @@ STR="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=O6_P_ZWwJ3Q perma
 sed -i "0,/location/ {
     /location/i ${STR}
     }" /etc/nginx/sites-enabled/default
-touch /var/www/html/my_404
-echo "Ceci n'est pas une page" > /var/www/html/my_404
-STR="\\\terror_page 404 /my_404.html;\n\tlocation = /my_404.html {\n\t\troot /var/www/html;\n\t\t}"
-sed -i "0,/location/ {
-    /location/i ${STR}
-    }" /etc/nginx/sites-enabled/default
+touch /var/www/html/my_404.html
+echo "Ceci n'est pas une page" > /var/www/html/my_404.html
+STR="\\\terror_page 404 /my_404.html;\n"
+sed -i "0,/root/ {
+    /root/i ${STR}
+    }" /etc/nginx/sites-available/default
 service nginx restart
