@@ -4,3 +4,4 @@ STR="\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v
 sed -i "0,/location/ {
     /location/i ${STR}
     }" /etc/nginx/sites-enabled/default
+nginx -s reload
