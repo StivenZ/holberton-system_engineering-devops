@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# load balancing
+apt-get -y update
+apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo service nginx start
+STR="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=O6_P_ZWwJ3Q permanent;\n"
+sed -i "0,/location/ {
+    /location/i ${STR}
+    }" /etc/nginx/sites-available/default
+touch /var/www/html/my_404.html
+echo "Ceci n'est pas une page" > /var/www/html/my_404.html
+STR="\\\terror_page 404 /my_404.html;\n"
+sed -i "0,/root/ {
+    /root/i ${STR}
+    }" /etc/nginx/sites-available/default
+MYHOST=$(< /etc/hostname)
+STR="\\\t\tadd_header X-Served-By $MYHOST;"
+sed -i "0,/location/ {
+    /location/a ${STR}
+    }" /etc/nginx/sites-enabled/default
+service nginx restart
