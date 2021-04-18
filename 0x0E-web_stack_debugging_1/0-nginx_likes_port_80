@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Fix a web server by executing script
+STR="listen 80 default server;\n"
+STR2="listen [::]:80 default_server;\n"
+sed "0,/index/ {
+    s/listen*/${STR}/1
+    }" ../etc/nginx/sites-enabled/default
+sed "0,/index/ {
+    s/listen*/${STR2}/g2
+    }" ../etc/nginx/sites-enabled/default
+service nginx restart
+
+STR="listen 80 default server;/n/tlisten [::]:80 default_server;\n"
+sed "0,/listen/ {
+    s/listen.*/${STR}/g1
+    }" /etc/nginx/sites-enabled/default
+
+sed "0,/root/ {
+    /root/-i ${STR}
+    }" /etc/nginx/sites-enabled/default
