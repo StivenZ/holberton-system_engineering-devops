@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # run container as nginx user
 useradd nginx
-sed "0,/user/ {
+sed -i "0,/user/ {
     s/user/user nginx/
     }"  /etc/nginx/nginx.conf
 
-sed "0,/listen [::]/ {
+sed -i "0,/listen [::]/ {
     s/80/80/
     }"  /etc/nginx/sites-enabled/default
 service nginx restart
