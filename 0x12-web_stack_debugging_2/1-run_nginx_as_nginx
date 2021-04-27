@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 # run container as nginx user
-useradd nginx
-sed -i "0,/user/ {
-    s/user/user nginx/
-    }"  /etc/nginx/nginx.conf
-
-sed -i "0,/listen [::]/ {
-    s/80/80/
-    }"  /etc/nginx/sites-enabled/default
-service nginx restart
+sed -i "s/80/8080/g" /etc/nginx/sites-enabled/default
+chmod 777 /etc/nginx/nginx.conf
+pkill apache2
+sudo -u nginx service nginx start
