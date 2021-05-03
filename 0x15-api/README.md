@@ -2,7 +2,7 @@
 This project is aimed to understand and work with APIs.
 ---
 
-0. Gather data from an API:
+### 0. Gather data from an API:
 
 &nbsp;&nbsp;Using a specific REST API, returns information about a TODO list progress given a certain employee ID.
 
@@ -10,7 +10,7 @@ This project is aimed to understand and work with APIs.
 
 
 
-1. Export to CSV:
+### 1. Export to CSV:
 
 &nbsp;&nbsp;Extended script to export information about certain employee to the file "USER_ID.csv" with this format:
 &nbsp;"USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"
@@ -19,7 +19,7 @@ This project is aimed to understand and work with APIs.
 
 
 
-2. Export to JSON:
+### 2. Export to JSON:
 
 &nbsp;&nbsp;Extended script to export information about certain employee to the file "USER_ID.json" with this format:
 &nbsp;{ "USER_ID": [{"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, {"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, ... ]}
@@ -28,7 +28,7 @@ This project is aimed to understand and work with APIs.
 
 
 
-3.  Dictionary of list of dictionaries:
+### 3. Dictionary of list of dictionaries:
 
 &nbsp;&nbsp;Extended script to export information about all employees to the file "todo_all_employees.json" with this format:
 &nbsp;{ "USER_ID": [{"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, {"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, ... ]}
