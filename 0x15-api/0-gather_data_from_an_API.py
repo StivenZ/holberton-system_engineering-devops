@@ -5,9 +5,9 @@
 if __name__ == "__main__":
     """Formats and displays data from an API request
     """
+    from sys import argv
     import json
     import requests
-    from sys import argv
 
     TOTAL_NUMBER_OF_TASKS = 0
     NUMBER_OF_DONE_TASKS = 0
