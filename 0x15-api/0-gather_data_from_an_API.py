@@ -7,11 +7,11 @@ if __name__ == "__main__":
     """
     import json
     import requests
-    import sys.argv
+    import sys
 
     TOTAL_NUMBER_OF_TASKS = 0
     NUMBER_OF_DONE_TASKS = 0
-    EMPLOYEE_ID = int(argv[1])
+    EMPLOYEE_ID = int(sys.argv[1])
     my_request = requests.get("https://jsonplaceholder.typicode.com/todos/")
     request_decoded = json.loads(my_request.content.decode("UTF-8"))
 
