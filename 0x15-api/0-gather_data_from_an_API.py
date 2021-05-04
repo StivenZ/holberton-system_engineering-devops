@@ -20,8 +20,8 @@ if __name__ == "__main__":
     EMPLOYEE_NAME = json.loads(name_decoded)[EMPLOYEE_ID].get("name")
 
     for task in request_decoded:
-        TOTAL_NUMBER_OF_TASKS += 1
         if EMPLOYEE_ID == task.get("userId"):
+            TOTAL_NUMBER_OF_TASKS += 1
             if task.get("completed"):
                 NUMBER_OF_DONE_TASKS += 1
 
