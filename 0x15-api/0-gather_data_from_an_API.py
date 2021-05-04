@@ -32,4 +32,4 @@ if __name__ == "__main__":
     for task in request_decoded:
         if EMPLOYEE_ID == task.get("userId"):
             if task.get("completed"):
-                print("\t {}".format(task.get("title")))
+                print("     {}".format(task.get("title")))
