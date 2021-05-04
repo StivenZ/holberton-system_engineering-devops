@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     name_request = requests.get("https://jsonplaceholder.typicode.com/users/")
     name_decoded = name_request.content.decode("UTF-8")
-    EMPLOYEE_NAME = json.loads(name_decoded)[EMPLOYEE_ID].get("name")
+    EMPLOYEE_NAME = json.loads(name_decoded)[EMPLOYEE_ID - 1].get("name")
 
     for task in request_decoded:
         if EMPLOYEE_ID == task.get("userId"):
@@ -26,7 +26,7 @@ if __name__ == "__main__":
                 NUMBER_OF_DONE_TASKS += 1
 
     print("Employee {} is done with\
-tasks({}/{}):".format(EMPLOYEE_NAME,
+ tasks({}/{}):".format(EMPLOYEE_NAME,
                        NUMBER_OF_DONE_TASKS,
                        TOTAL_NUMBER_OF_TASKS))
     for task in request_decoded:
